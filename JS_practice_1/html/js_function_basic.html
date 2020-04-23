@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>함수 - 함수의 기초</title>
+  </head>
+  <body>
+    <h1><함수의 기초></h1>
+    <h2>자바스크립트의 함수</h2>
+    <p>자바스크릡트에서는 함수도 하나의 타입(datatype)이다.</p>
+    <p>따라서 함수를 변수에 대입하거나, 함수에 프로퍼티를 지정하는 것도 가능하다.<br>또한, 자바스크립트 함수는 다른 함수 내에 중첩되어 정의될 수도 있다.</p>
+
+    <h2>함수의 정의</h2>
+    <p>함수는 크게<br>1.함수의 이름<br>2.괄호 안에 쉼표(,)로 구분되는 함수의 매개 변수<br>3.중괄호({})로 둘러싸인 자바스크립트 실행문<br>으로 구성된다.<br><br>문법은 다음과 같다.<br><br>function 함수이름(매개변수1, 매개변수2, ...) {<br>함수가 호출되었을 때 실행하고자 하는 실행문;<br>}<br><br>함수 이름은 함수를 구분하는 식별자(identifier)이다. 매개변수(parameter)는 함수를 호출할 때 인수(argument)로 전달된 값을 함수 내부에서 사용할 수 있게 해주는 변수이다.</p>
+  <script type="text/javascript">
+    //addNum라는 이름의 함수 정의.
+    function addNum(x, y) {
+      document.write(x + y);
+    }
+    document.write("addNum(2, 3) 수행 결과 --> ")
+    addNum(2, 3);
+  </script>
+  <br>
+
+  <h2>반환(return)문</h2>
+  <p>자바스크립트에서 함수는 반환(return)문을 포함할 수 있다.<br>이러한 반환문을 통해 호출자는 함수에서 실행된 결과를 전달받을 수 있다.</p>
+  <p>반환문은 함수의 실행을 중단하고, return 키워드 다음에 명시된 표현식의 값을 호출자에게 반환한다. 반환문은 배열이나 객체를 포함한 <b>모든 타입의 값</b>을 반환할 수 있다.</p>
+  <script type="text/javascript">
+    function multiNum(x, y) {
+      return x * y;
+    }
+    var num = multiNum(3, 4);
+    document.write("multiNum(3, 4)의 실행 결과 --> " + num);
+  </script>
+  <br>
+
+  <h2>함수의 호출</h2>
+  <p>정의된 함수는 프로그램 내에서 호출되어야 비로서 실행된다.<br>일반적인 함수의 호출은 함수의 정의문과 같은 형태로 호출 가능하다.</p>
+  <p>함수의 정의<br>function addNum(a, b) {<br>return x + y;<br>}</p>
+  <p>함수의 호출<br>var sum = addNum(3, 5); // 함수 addNum()을 호출하면서, 인수로 3과 5를 전달.<br>//함수의 호출이 끝난 뒤에는 그 반환값을 변수 sum에 대입.</p>
+
+  <h2>값으로서의 함수</h2>
+  <p>자바스크립트에서 함수는 문법적 구문임과 동시에 값(value)이기도 하다.<br>따라서 함수가 변수에 대입될 수도 있으며, 다른 함수의 인수로 전달될 수도 있다.</p>
+  <script type="text/javascript">
+    function sqr(x) {
+      return x * x;
+    }
+    var sqrNum = sqr;
+    document.write(sqr(4) + "<br>");
+    document.write(sqrNum(4) + "<br>");
+  </script>
+  </body>
+</html>

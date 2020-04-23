@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>희소 배열</h2>
+    <script type="text/javascript">
+      var arr = new Array();  //빈 배열 객체를 생성.
+      arr[99] = "JavaScript"; //배열 arr의 100번째 위치에 문자열 삽입.
+      //100번째 요소를 삽입했기 때문에 배열의 길이는 100으로 증가함.
+      document.write("배열의 길이는" + arr.length + "입니다.");
+    </script>
+
+    <h2>다차원 배열</h2>
+    <script type="text/javascript">
+      var arr = new Array(3); //3개의 요소를 가지는 배열 생성.
+      for(var row = 0; row < 3; row++) {
+        arr[row] = new Array(4);  //각각의 요소마다 또다시 4개의 요소를 가지는 배열을 생성.
+        for(var column = 0; column < 4; column++) {
+          arr[row][column] = "[" + row + "," + column + "]";  //각각의 배열 요소를 생성.
+          document.write(arr[row][column] + " "); //각 배열 요소에 접근.
+        }
+      }
+    </script>
+
+    <h2>연관 배열</h2>
+    <script type="text/javascript">
+      /*숫자로 된 인덱스 대신에 문자열로 된 키(key)를 사용하는 배열을 연관 배열(associative array)라고 한다.
+      자바스크립트는 별도로 연관 배열을 지원하지 않으나, 인덱스로 문자열을 사용하여 연관 배열처럼 사용 가능한 객체를 만들 수 있다.*/
+      var arr = []; //비어있는 배열 생성.
+      arr["하나"] = 1;  //숫자 인덱스 대신에 문자열을 인덱스로 배열 요소를 추가.
+      arr["참"] = true;
+      arr["자바스크립트"] = "JavaScript";
+      document.write("arr[참] : " + arr["참"] + "<br>"); //문자열을 인덱스로 배열 요소에 접근 가능.
+      document.write("arr.legnth : " + arr.length + "<br>"); //연관 배열은 Array 객체가 아니므로 length 프로퍼티의 값이 0.
+      document.write("arr[0] : " + arr[0] + "<br>"); //undefined
+    </script>
+
+    <h2>문자열을 배열처럼 접근하기</h2>
+    <script type="text/javascript">
+      /*자바스크립트에서 문자열을 변하지 않는 값이므로, 읽기 전용 배열로서 다룰 수 있다.
+      따라서 배열처럼 [] 연산자를 사용하여 문자열을 구성하는 각 문자에 바로 접근할 수 있다. 또한 Array 객체가 제공하는 모든 범용 메소드도 사용 가능하다. 문자열의 각 문자는 String 객체에서 제공하는 charAt() 메소드를 사용해도 접근 가능하다.*/
+      var str = "안녕하세요!";
+      document.write(str.charAt(2) + "<br>");
+      document.write(str[2] + "<br>");
+
+      /*하지만 문자열을 배열처럼 접근하는 방법은 IE7 이하 버전에서는 동작하지 않는다. 또한, 문자열을 배열로 착각하게 되어 다음과 같은 실수를 유발할 수도 있다.*/
+      var str2 = "안녕하세요!";
+      str[0] = "";  //자바스크릡트의 문자열은 '읽기 전용'이므로, 이 문장은 오류를 유발한다.
+      document.write(str2 + "<br>");
+    </script>
+
+    <h2>자바스크릡트에서 배열 여부 확인</h2>
+    <script type="text/javascript">
+      /*자바스크립트에서는 배열이라는 타입(type)을 별도로 제공하지 않는다.
+      자바스크릡트 배열은 객체(Object) 타입이 되며, typeof 연산자를 사용하면 'object'를 반환한다.*/
+      var arr = [1, true, "JavaScript"];
+      document.write((typeof arr) + "<br><br>");
+
+      /*따라서 자바스크릡트에서는 해당 변수가 배열인지 확인할 수 있도록 다음 방법들을 제공한다.
+      1. Array.isArray() 메소드
+      2. instanceof 메소드
+      3. constructor 프로퍼티
+      ES5(ECMAScript5)부터는 Array 클래스에 isArray()라는 배열 여부를 확인할 수 있는 메소드가 추가되었다.*/
+      document.write("Array.isArray(arr) : " + Array.isArray(arr) + "<br>");
+      document.write("Array.isArray(''문자열'') : " + Array.isArray("문자열") + "<br><br>");
+
+      /*구형 브라우저는 ECMAScript5를 지원하지 읂으므로, 이 경우에는 Array.isArray() 메소드 대신 instanceof 연산자를 사용하여 배열 여부를 판단ㅎ한다.*/
+      document.write((arr instanceof Array) + "<br>");
+      document.write((123 instanceof Array) + "<br><br>");
+
+      /*Array 객체의 constructor 프로퍼티를 사용하여 배열 여부를 확인할 수도 있다. 자바스크립트 배열에 대해 constructor 프로퍼티는 다음과 같은 값을 반환한다.
+      function Array() {[native code]}
+      */
+      function isArray(a) {
+        return a.constructor.toString().indexOf("Array") > -1;
+        /*"Array"라는 부분 문자열을 포함하고 있으면 true, 아니면 false를 반환.
+        입력된 변수 a가 배열이라면 "Array"라는 부분 문자열을 언제나 포함하고 있으므로, true를 반환하게 된다.*/
+      }
+      document.write(arr.constructor + "<br>");
+      document.write(arr.constructor.toString() + "<br>");
+      document.write(arr.constructor.toString().indexOf("Array") + "<br>");
+      document.write(isArray(arr) + "<br>")
+    </script>
+  </body>
+</html>

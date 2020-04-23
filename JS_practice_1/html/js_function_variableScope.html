@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>함수 - 변수의 유효 범위</title>
+  </head>
+  <body>
+    <h1><변수의 유효 범위></h1>
+    <h2>변수의 유효 범위(variabel Scope)</h2>
+    <p>자바스크립트에서 객체나 함수는 모두 변수(variable)이다.<br>변수의 유효 범위(scope)란 해당 변수가 접근할 수 있는 변수, 객체 그리고 함수의 집합을 의미한다.</p>
+    <p>자바스크립트에서 변수는 유효 범위에 따라 다음과 같이 구분한다.<br></p>
+    <p>1.지역변수(loacl variable)<br>2.전역 변수(global variabel)<br></p>
+
+    <h2>지역 변수(loacl variable)</h2>
+    <p>지역 변수(local variable)은 함수 내에서 선언된 변수를 가리킨다. 이러한 지역변수는 변수가 선언된 함수 내에서만 유효하며, 함수가 종료되면 메모리에서 사라진다. 함수의 매개변수 또한 함수 내에서 정의되는 지역 변수처럼 동작한다.</p>
+    <script type="text/javascript">
+      function localNum() {
+        var num = 10;
+        document.write("함수 내부에서 변수 num의 타입은 " + (typeof num) + "입니다.<br>");
+      }
+      localNum();
+      document.write("함수의 호출이 끝난 뒤 변수 num의 타입은 " + (typeof num) + "입니다.<br>");
+    </script>
+    <h2>전역 변수(global variable)</h2>
+    <p>전역 변수(global variable)란 함수의 외부에서 선언된 변수를 가리킨다. 이러한 전역 변수는 프로그램의 어느 영역에서나 접근할 수 있으며, 웹 페이지가 닫혀야만 메모리에서 사라진다.</p>
+    <script type="text/javascript">
+      var num = 10;
+      function globalNum() {
+        document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>"); //10
+        num = 20; //전역 변수 num의 값을 함수 내부에서 변경.
+      }
+      globalNum();  //함수 globalNum()을 호출.
+      document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다.<br>") //20
+    </script>
+    <p>위의 에제처럼 전역변수는 함수 외부뿐만 아니라 내부에서도 접근하여 변경할 수 있다.<br><br> 자바스크립트에서 <b>지역 변수를 선언할 때에는 반드시 var 키워드를 사용하여 선언</b>해야 한다.<br>함수 내부에서 var 키워드를 사용하지 않고 변수를 선언하면, 해당 변수는 지역 변수가 아닌 전역 변수로 선언된다.</p>
+    <script type="text/javascript">
+      function globalNum() {
+        num = 10;
+        document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>");
+      }
+      globalNum();
+      document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다.<br>");
+    </script>
+    <br>
+    <script type="text/javascript">
+      var num = 10; //전역 변수 num을 선언.
+      function globalNum() {
+        var num = 20; //같은 이름의 지역변수 num을 선언.
+        document.write("함수 내부에서 지역 변수 num의 값은 " + num + "입니다.<br>");
+        document.write("함수 내부에서 전역 변수 num의 값은 " + window.num + "입니다.<br>");
+        //해당 블록에서 전역 변수를 호출하려면, 전역 변수가 wundow 객체의 프로퍼티임을 명시하면 된다.
+      }
+      globalNum();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>함수 - 매개변수와 인수</title>
+  </head>
+  <body>
+    <h1><매개변수와 인수></h1>
+    <h2>매개변수(parameter)</h2>
+    <p>자바스크립트에서 함수를 정의할 때는 매개변수의 타입을 따로 명시하지 않는다.<br>함수를 호출할 때에도 인수(argument)로 전달된 값에 대해 어떠한 타입 검사도 하지 않는다.</p><p>함수를 호출할 때 함수의 정의보다 적은 수의 인수가 전달되더라도, 다른 언어와는 달리 오류를 발생시키지 않는다.<br>이 같은 경우 자바스크립트는 전달되지 않은 나머지 매개변수에 자동으로 undefined 값을 설정한다.</p>
+    <script type="text/javascript">
+      function addNum(x, y, z) {
+        return x + y + z;
+      }
+      document.write(addNum(1, 2, 3) + "<br>")
+      document.write(addNum(1, 2) + "<br>")
+      document.write(addNum(1) + "<br>")
+      document.write(addNum() + "<br>")
+    </script>
+
+    <script type="text/javascript">
+      function addNum(x, y, z) {
+        if(x === undefined) x = 0;
+        if(y === undefined) y = 0;
+        if(z === undefined) z = 0;
+        return x + y + z;
+      }
+      document.write(addNum(1, 2, 3) + "<br>")
+      document.write(addNum(1, 2) + "<br>")
+      document.write(addNum(1) + "<br>")
+      document.write(addNum() + "<br>")
+    </script>
+
+    <h2>arguments 객체</h2>
+  </body>
+</html>
