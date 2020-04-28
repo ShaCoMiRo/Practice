@@ -1,40 +1,26 @@
-"use strict";
+"use strict"
 
-console.log('I\'m Workng. I\'m JS. I\'m Beautiful. I\'m worth it');
+const idTitle = document.querySelector("#title");
 
-const info = 'constnat variable';
-const a = 211;
-const b = a - 5;
-console.log(`a: ${a}, b: ${b}`);
-console.log(info);
+const CLICKED_CLASS = "clicked";
 
-//Array
-const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+function handleClick() {
+    idTitle.classList.toggle(CLICKED_CLASS);
 
-console.log(daysOfWeek);
-console.log(daysOfWeek[2]);
+    // // const currentClass = idTitle.className;
+    // const hasClass = idTitle.classList.contains(CLICKED_CLASS);
 
-//Object
-const SunghyunInfo = {
-    name: "Sunghyun",
-    age: 25,
-    gender: "Male",
-    isHandsome: true,
-    favMovies: ["Fury", "Avengers"],
-    favFood: [
-        {
-        name: "Hamburger",
-        fatty: true
-        },
-        {
-            name: "ramen",
-            fatty: true
-        }],
+    // if(hasClass) {
+    //     idTitle.classList.remove(CLICKED_CLASS);
+    //     // idTitle.className = "";
+    // } else {
+    //     idTitle.classList.add(CLICKED_CLASS);
+    //     // idTitle.className = CLICKED_CLASS;
+    // }
+}
 
-    introduce() {
-        console.log("Hi! I'm Sunghyun Lee. Nice to see you!");
-    }
-};
+function init() {
+    idTitle.addEventListener("click", handleClick);
+}
 
-console.log(SunghyunInfo);
-SunghyunInfo.introduce();
+init();

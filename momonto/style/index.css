@@ -1,3 +1,20 @@
 body {
-    background-color: #AAAAAA;
+    background-color: #ECF0F1;
+}
+
+h1 {
+    color: #34495E;
+    transition: color 0.5s ease-in-out;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.clicked {
+    color: #7F8C8D;
+}
+
+#title {
+
 }
