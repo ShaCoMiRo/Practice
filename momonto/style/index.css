@@ -1,20 +1,76 @@
 body {
-    background-color: #ECF0F1;
+    background-color: #2c3e50;
 }
 
 h1 {
-    color: #34495E;
-    transition: color 0.5s ease-in-out;
+    /* color: #34495E;
+    transition: color 0.5s ease-in-out; */
 }
 
-.btn {
+li {
+    color: #ecf0f1;
+}
+
+.css-clock {
+    color: #ecf0f1;
+    text-align: center;
+    font-size: 45px;
+    margin: auto auto;
+}
+ 
+.greetingForm,
+.greetings {
+    display: none;
+}
+
+.showing {
+    color: #ecf0f1;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* text-align: center;
+    display: block; */
+}
+
+.toDoForm,
+.toDoList {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn 0.5s linear;
+}
+
+.weather {
+    color: #ecf0f1;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* .btn {
     cursor: pointer;
 }
 
 .clicked {
     color: #7F8C8D;
-}
-
-#title {
-
-}
+} */

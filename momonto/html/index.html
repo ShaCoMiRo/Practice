@@ -7,8 +7,22 @@
     <link rel="stylesheet" href="../style/index.css">
 </head>
 <body>
-    <h1 id="title" class="btn">It's work!</h1>
-    <script src="../script/index.js"></script>
-    <!-- <script src="../script/test.js"></script> -->
+    <div class="js-clock css-clock">
+        <h1 class="js-title">00:00</h1>
+    </div>
+    <form action="" class="js-greetingFrom greetingForm">
+        <input type="text" class="js-nameInput" placeholder="What is your name?" />
+    </form>
+    <h4 class="js-greetings greetings"></h4>
+    <form action="" class="js-toDoForm toDoForm">
+        <input type="text" class="js-toDoInput" placeholder="Write a to do" />
+    </form>
+    <ul class="js-toDoList toDoList"></ul>
+    <span class="js-weather weather"></span>
+    <script src="../script/clock.js"></script>
+    <script src="../script/greeting.js"></script>
+    <script src="../script/todo.js"></script>
+    <script src="../script/bg.js"></script>
+    <script src="../script/weather.js"></script>
 </body>
 </html>
