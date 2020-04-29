@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/index.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td class="statusPad" colspan="4"><input class="js-display statusPad" type="text" name="display" /></td>
+        </tr>
+        <tr>
+            <td class="statusPad" colspan="4"><input class="js-result statusPad" type="text" name="result" /></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="fnPad" onclick="handleAllClear()">AC</td>
+            <td class="fnPad" onclick="handleAddChar('/')">/</td>
+        </tr>
+        <tr>
+            <td class="numPad" onclick="handleAddChar(7)">7</td>
+            <td class="numPad" onclick="handleAddChar(8)">8</td>
+            <td class="numPad" onclick="handleAddChar(9)"> 9</td>
+            <td class="fnPad" onclick="handleAddChar('*')">*</td>
+        </tr>
+        <tr>
+            <td class="numPad" onclick="handleAddChar(4)">4</td>
+            <td class="numPad" onclick="handleAddChar(5)">5</td>
+            <td class="numPad" onclick="handleAddChar(6)">6</td>
+            <td class="fnPad" onclick="handleAddChar('-')">-</td>
+        </tr>
+        <tr>
+            <td class="numPad" onclick="handleAddChar(1)">1</td>
+            <td class="numPad" onclick="handleAddChar(2)">2</td>
+            <td class="numPad" onclick="handleAddChar(3)">3</td>
+            <td class="fnPad" onclick="handleAddChar('+')">+</td>
+        </tr>
+        <tr>
+            <td class="numPad" colspan="2" onclick="handleAddChar(0)">0</td>
+            <td class="numPad" onclick="handleAddChar('.')">.</td>
+            <td class="fnPad" onclick="handleResult()">=</td>
+        </tr>
+    </table>
+    <script src="../script/calc.js"></script>
+</body>
+</html>

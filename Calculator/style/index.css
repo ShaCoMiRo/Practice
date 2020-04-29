@@ -1,0 +1,26 @@
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+input {
+    border: none;
+}
+
+.numPad {
+    background-color: #ecf0f1;
+}
+
+.fnPad {
+    background-color: #e67e22;
+    color: #ecf0f1;
+}
+
+.statusPad {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
